@@ -1,0 +1,14 @@
+.SplitPane {
+  width: 100%;
+  height: 600px;
+}
+.SplitPane-left {
+  width: 400px;
+  height: 100%;
+  float: left;
+}
+.SplitPnae-right {
+  width: 400px;
+  height: 100%;
+  float: left;
+}
