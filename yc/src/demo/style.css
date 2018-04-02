@@ -1,0 +1,9 @@
+body {
+  background: gray;
+  color: green;
+}
+.small {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+}

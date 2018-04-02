@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="spm-id" content="{{$data.page.spma}}.{{$data.page.spmb}}">
+    <link rel="Shortcut Icon" href="//static.youku.com/v1.0.166/index/img/favicon.ico">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="description" content="">
+    <meta name="title" content="">
+    <script>
+      window.HollywoodConfig = {
+          actid: 'a2ob2', // 活动id，必填，埋点相关
+          actpage: '11317122', // 页面id，必填，埋点相关
+      }
+    </script>
+   <script src="//g.alicdn.com/hollywood/hollywood-lib/2.0.2/vue.js">
+    </script>
+    <script src="//g.alicdn.com/hollywood/hollywood-lib/2.0.2/vue-router.js"></script>
+    <script src="//g.alicdn.com/hollywood/hollywood-lib/2.0.2/promise.js"></script>
+    <script src="//g.alicdn.com/mtb/lib-flexible/0.3.2/flexible.js" data-mt-inline=""></script>
+    <!-- // 分享 -->
+    <script src="//g.alicdn.com/hollywood/hollywood-lib/2.0.14/index.js">
+    </script>
+    <script src="//g.alicdn.com/hollywood/hollywood-lib/2.0.2/mtop.js">
+    </script>
+    <script src="//g.alicdn.com/hollywood/hollywood-lib/2.0.2/windvane2.js"></script>
+    <script src="//g.alicdn.com/hollywood/hollywood-kit/1.0.3/index.min.js">
+    </script>
+
+  
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <!-- <img class="display" src="https://gw.alicdn.com/tfs/TB1mwcsfmBYBeNjy0FeXXbnmFXa-300-300.jpg" alt=""> -->
+    <script>
+      // alert('html');
+      var config1; //年榜
+      var rules; //规则数据配置
+      var starDetails; // 明星详情
+      var week;//周榜综合指数
+      var business; //周榜的商业力榜
+      var fans; //周榜的粉丝力榜
+      var play; //周榜的作品力榜
+      var suckeye; //周榜的吸睛力榜
+      var starchange; //趋势变化
+      window.ycstar = function(res){
+        config1 = res;
+      };
+      window.ruleDetails = function(res){
+        ruleDetails = res;
+      };
+      window.starDetail = function(res){
+        starDetails = res;
+      };
+      window.weekCompositeRank = function(res){
+        week = res;
+      };
+      window.weekBusinessRank = function(res){
+        business = res;
+      };
+      window.weekFansRank = function(res){
+        fans = res;
+      };
+      window.weekPlayRank = function(res){
+        play = res;
+      };
+      window.weekSuckeyeRank = function(res){
+        suckeye = res;
+      };
+
+      window.rankTrend = function(res){
+        starchange = res;
+      };
+
+      
+      // console.log(!window.HollywoodLog,!window.HollywoodBridge,!window.HollywoodBrowser)
+      
+
+     window.loadScript = function(url, callback) {
+        // alert(1);
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        if(typeof(callback) != "undefined"){
+          // alert(2);
+          if (script.readyState) {
+            // alert(3)
+            script.onreadystatechange = function () {
+              // alert(4)
+              if (script.readyState == "loaded" || script.readyState == "complete") {
+                // alert(5)
+                script.onreadystatechange = null;
+                callback();
+              }
+            };
+          } else {
+            // alert(6)
+            script.onload = function () {
+              callback();
+            };
+          }
+        }
+        script.src = url;
+        document.body.appendChild(script);
+      }
+
+      /*var param = {
+          show: 'yes',//默认为yes，webview三点控制  安卓没有这个控制、旧版schame支持--非windvane环境下可以支持这个参数
+          // type: 'img',//分享内容类型 img为分享图片，不传为链接
+          title: '原来TA夺得了周榜冠军？',
+          link: window.location.href,
+          shareImage: 'https://gw.alicdn.com/tfs/TB1bvS2frGYBuNjy0FoXXciBFXa-100-100.png',//带http、https协议
+          desc: 'YC超星价值榜直观解读本周全文娱领域明星商业价值',
+          img: 'https://gw.alicdn.com/tfs/TB1bvS2frGYBuNjy0FoXXciBFXa-100-100.png',//type为img必传，带http、https协议
+          // taskId: '业务标识，可以不传',
+          bannerInfo: {} // 分享banner配置，透传
+      }
+      console.log(param)
+      window.HollywoodKit.setPageShare(param);*/
+    
+    </script>
+
+    
+    
+    <!-- 年榜 -->
+    <!-- <script src="https://hudong.alicdn.com/api/data/v2/96fa2f26add54db9ac5175a4d38b555b.js"></script> -->
+    <!-- 周榜 -->
+    <script src="//hudong.alicdn.com/api/data/v2/aae5c6c305224d0d81e839815d6e8aa0.js">
+    </script>
+    <!-- MT数据配置 -->
+     <script src="//hudong.alicdn.com/api/data/v2/27ff34558c904b5a9de9de6a640dba3f.js"></script>
+
+  </body>
+
+</html>
